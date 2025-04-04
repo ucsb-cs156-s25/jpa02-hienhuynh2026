@@ -3,6 +3,7 @@ package edu.ucsb.cs156.spring.hello;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.beans.Transient;
+import java.util.Collections;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -67,14 +68,24 @@ public class TeamTest {
         assert(team.equals(team2));
     }
     @Test
-    public void equal_returns_false_for_different_team_name() {
-        Team team2 = new Team("test-team2");
-        assert(!team.equals(team2));
+    public void hashCodetest() {
+        Team t1 = new Team();
+        t1.setName("foo");
+        t1.addMember("bar");
+        Team t2 = new Team();
+        t2.setName("foo");
+        t2.addMember("bar");
+        assertEquals(t1.hashCode(), t2.hashCode());
+            
+
+    
+   
+
+        
+
     }
     
-    @Test
-    public void hashCode_test():
-    
+
     
 
 
