@@ -38,5 +38,24 @@ public class DeveloperTest {
         
     }
 
+    @Test
+    public void getTeam_returns_team_with_correct_name() {
+        Team team = Developer.getTeam();
+        assertEquals("s25-05", team.getName());
+        assertEquals(6, team.getMembers().size());
+        assertTrue(team.getMembers().contains("Hien H."), "Team should contain Hien H.");
+        assertTrue(team.getMembers().contains("Austin Q."), "Team should contain Austin Qu.");
+        assertTrue(team.getMembers().contains("Michael T."), "Team should contain Michael T.");
+        assertTrue(team.getMembers().contains("Jim W."), "Team should contain Jim W.");
+        assertTrue(team.getMembers().contains("Awin Z."), "Team should contain Awin Z.");
+        assertTrue(team.getMembers().contains("Vishal S."), "Team should contain Vishal S.");
+
+
+
+
+    }
+
+    
+
 
 }
