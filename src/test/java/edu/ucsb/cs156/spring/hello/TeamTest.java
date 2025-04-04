@@ -68,7 +68,7 @@ public class TeamTest {
         assert(team.equals(team2));
     }
     @Test
-    public void hashCodetest() {
+    public void hashCodetest1() {
         Team t1 = new Team();
         t1.setName("foo");
         t1.addMember("bar");
@@ -76,14 +76,24 @@ public class TeamTest {
         t2.setName("foo");
         t2.addMember("bar");
         assertEquals(t1.hashCode(), t2.hashCode());
-            
+        int result = t1.hashCode();
 
-    
-   
-
-        
 
     }
+
+    @Test
+    public void hashCode_calculatesCorrectValue() {
+        Team team = new Team();
+        team.setName("foo");
+        team.addMember("bar");
+        
+        int expectedHash = "foo".hashCode() | Collections.singletonList("bar").hashCode();
+        int actualHash = team.hashCode();
+        
+        assertEquals(expectedHash, actualHash);
+}
+   
+  
     
 
     
